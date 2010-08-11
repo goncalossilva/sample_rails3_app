@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @parent.name %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @parent.age %>
+</p>
+
+<p>
+  <b>Grand Parent:</b>
+  <%= link_to @parent.grand_parent.name, @parent.grand_parent %>
+</p>
+
+<p>
+  <b>Children:</b>
+  <% @parent.children.each do |child| %>
+    <%= link_to child.name, child %>
+  <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_parent_path(@parent) %> |
+<%= link_to 'Back', parents_path %>

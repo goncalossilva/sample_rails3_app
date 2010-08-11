@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @grand_parent.name %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @grand_parent.age %>
+</p>
+
+<p>
+  <b>Parents:</b>
+  <% @grand_parent.parents.each do |parent| %>
+    <%= link_to parent.name, parent %>
+  <% end %>
+</p>
+
+<p>
+  <b>Children:</b>
+  <% @grand_parent.children.each do |child| %>
+    <%= link_to child.name, child %>
+  <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_grand_parent_path(@grand_parent) %> |
+<%= link_to 'Back', grand_parents_path %>
